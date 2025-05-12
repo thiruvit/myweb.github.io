@@ -226,24 +226,29 @@
                     <p><i class="uil uil-envelope"></i> : itsthiruhere@gmail.com</p>
                     <p><i class="uil uil-phone"></i> : +91 9042666363</p>
                 </div>
+                
+                  
              </div>
              <div class="col">
-                <form action="https://formspree.io/f/xpwdyaby" method="POST" class="form-control">
+                <form id="contact-form" class="form-control">
+                    <div class="form-inputs">
+                      <input type="text" class="input-field" name="name" placeholder="Name" required>
+                      <input type="email" class="input-field" name="email" placeholder="Email" required>
+                    </div>
                   
-                  <div class="form-inputs">
-                    <input type="text" class="input-field" name="name" placeholder="Name" required>
-                    <input type="email" class="input-field" name="email" placeholder="Email" required>
-                  </div>
-              
-                  <div class="text-area">
-                    <textarea name="message" placeholder="Message" required></textarea>
-                  </div>
-              
-                  <div class="form-button">
-                    <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
-                  </div>
-              
-                </form>
+                    <div class="text-area">
+                      <textarea name="message" placeholder="Message" required></textarea>
+                    </div>
+                  
+                    <div class="form-button">
+                      <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
+                    </div>
+                  </form>
+                  <div id="form-message" class="form-message" style="display: none;"></div>
+                 
+                    
+                  
+                  
               </div>
               
              

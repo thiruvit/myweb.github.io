@@ -115,3 +115,40 @@ sections.forEach(current =>{
 }
 
 window.addEventListener('scroll', scrollActive)
+/* ------ CONTACT FORM SUBMISSION-------*/
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const messageDiv = document.getElementById("form-message");
+
+  const response = await fetch("https://formspree.io/f/xpwdyaby", {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    form.reset();
+    messageDiv.textContent = "Message sent successfully!";
+    messageDiv.className = "form-message success";
+    messageDiv.style.display = "block";
+    
+    // Hide after 5 seconds
+    setTimeout(() => {
+      messageDiv.style.display = "none";
+    }, 3000);
+
+  } else {
+    messageDiv.textContent = "Oops! Something went wrong.";
+    messageDiv.className = "form-message error";
+    messageDiv.style.display = "block";
+
+    // Also hide error message after 5 seconds
+    setTimeout(() => {
+      messageDiv.style.display = "none";
+    }, 5000);
+  }
+});
